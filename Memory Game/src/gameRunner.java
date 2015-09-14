@@ -6,5 +6,7 @@ public class gameRunner
 		{
 		boardMaker.makeBoard();
 		boardMaker.displayBoard();
+		playerTurn.askForBoard();
+		boardMaker.fillBoard();
 		}
 	}
