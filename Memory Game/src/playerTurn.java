@@ -4,6 +4,7 @@ public class playerTurn
 	{
 	static boolean isWon = true;
 	static String spotInput;
+	static String firstColumn;
 	static Scanner userInput = new Scanner(System.in);
 	public static void askForBoard()
 		{
@@ -15,7 +16,11 @@ public class playerTurn
 			}
 		if (boardInput == "places")
 			{
-			boardMaker.fillAnimals();
+			boardMaker.fillPlaces();
+			}
+		if (boardInput == "body parts")
+			{
+			boardMaker.fillBody();;
 			}
 		}
 	public static void askForTurn()
@@ -27,7 +32,7 @@ public class playerTurn
 			case "a":
 			case "A":
 				{
-					
+				firstColumn = Integer.parseInt(spot.substring(1)-1);
 				break;
 				}
 			}

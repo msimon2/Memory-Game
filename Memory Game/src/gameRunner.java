@@ -8,5 +8,7 @@ public class gameRunner
 		boardMaker.displayBoard();
 		playerTurn.askForBoard();
 		boardMaker.fillBoard();
+		boardMaker.fillAnimals();
+		//playerTurn.askForTurn();
 		}
 	}

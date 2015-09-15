@@ -3,9 +3,11 @@ import java.util.*;
 public class boardMaker 
 	{
 	static String [] [] board = new String [4][4];
-	static ArrayList animalLists = new ArrayList();
-	static ArrayList bodyLists = new ArrayList();
-	static ArrayList placesLists = new ArrayList();
+	static String [] [] hiddenArray = new String [4][4];
+	static ArrayList<String> animalLists = new ArrayList<String>();
+	static ArrayList<String> bodyLists = new ArrayList<String>();
+	static ArrayList<String> placesLists = new ArrayList<String>();
+	
 	public static void makeBoard()
 		{
 		for (int row=0; row<board.length; row++)
@@ -16,6 +18,7 @@ public class boardMaker
 				}
 			}
 		}
+	
 	public static void fillBoard()
 		{
 		animalLists.add("bison");
@@ -66,24 +69,14 @@ public class boardMaker
 		placesLists.add("Chile");
 		placesLists.add("China");
 		placesLists.add("China");
+		placesLists.add("Nepal");
+		placesLists.add("Nepal");
 		
 		Collections.shuffle(animalLists);
 		Collections.shuffle(bodyLists);
 		Collections.shuffle(placesLists);
 		}
-	public static void fillAnimals()
-		{
-		for (int row = 0 ; row < 8 ; row ++)
-			{
-			for (int col = 0 ; col < 8 ; col ++ )
-				{
-				for ( int i = 0 ; i <animalLists.size(); i++)
-					{
-					board[row][col] = animalLists.get(i);
-					}
-				}
-			}
-		}
+	
 	public static void displayBoard()
 		{
 		System.out.println("      1       2       3       4");
@@ -97,6 +90,49 @@ public class boardMaker
 		System.out.println("D |" + board[3][0] + "|" + board[3][1] + "|" + board[3][2] + "|" + board[3][3] + "|");
 		System.out.println("  —————————————————————————————————");
 		System.out.println();
+		}
+	
+	public static void fillAnimals()
+		{
+		for (int row = 0 ; row < 4 ; row ++)
+			{
+			for (int col = 0 ; col < 4 ; col ++ )
+				{
+				for ( int i = 0 ; i < 16; i++)
+					{
+					hiddenArray[row][col] = animalLists.get(i);
+					}
+				}
+			}
+		System.out.println("animals fileld");
+		}
+	public static void fillBody()
+		{
+		for (int row = 0 ; row < 4 ; row ++)
+			{
+			for (int col = 0 ; col < 4 ; col ++ )
+				{
+				for ( int i = 0 ; i < 16; i++)
+					{
+					hiddenArray[row][col] = bodyLists.get(i);
+					}
+				}
+			}
+		System.out.println("body fileld");
+		}
+	public static void fillPlaces()
+		{
+		for (int row = 0 ; row < 4 ; row ++)
+			{
+			for (int col = 0 ; col < 4 ; col ++ )
+				{
+				for ( int i = 0 ; i < 16; i++)
+					{
+					hiddenArray[row][col] = placesLists.get(i);
+					}
+				}
+			}
+		System.out.println("places fileld");
 		}
 	}
 
