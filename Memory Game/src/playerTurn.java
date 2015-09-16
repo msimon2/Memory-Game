@@ -4,37 +4,63 @@ public class playerTurn
 	{
 	static boolean isWon = true;
 	static String spotInput;
-	static String firstColumn;
+	static int columnInput;
 	static Scanner userInput = new Scanner(System.in);
 	public static void askForBoard()
 		{
 		System.out.println("User, what board would you like to play? You have animal, places, and body parts.");
 		String boardInput = userInput.nextLine();
-		if (boardInput == "animal")
+		if (boardInput.equals("animal"))
 			{
 			boardMaker.fillAnimals();
 			}
-		if (boardInput == "places")
+		if (boardInput.equals("places"))
 			{
 			boardMaker.fillPlaces();
 			}
-		if (boardInput == "body parts")
+		if (boardInput.equals("body parts"))
 			{
-			boardMaker.fillBody();;
+			boardMaker.fillBody();
 			}
 		}
+	
 	public static void askForTurn()
 		{
 		System.out.println("User, please put in the spot you'd like to guess.");
-		String spot = userInput.nextLine();
-		switch (spotInput)
+		String spotInput = userInput.nextLine();
+		switch (spotInput.substring(0,1))
 			{
 			case "a":
 			case "A":
 				{
-				firstColumn = Integer.parseInt(spot.substring(1)-1);
+				columnInput = 0;
+				break;
+				}
+			case "b":
+			case "B":
+				{
+				columnInput = 1;
+				break;
+				}
+			case "c":
+			case "C":
+				{
+					System.out.println("hry");
+
+				columnInput = 2;
+				break;
+				}
+			case "d":
+			case "D":
+				{
+				columnInput = 3;
 				break;
 				}
 			}
 		}
 	}
+
+
+
+
+
