@@ -8,6 +8,10 @@ public class gameRunner
 		boardMaker.displayBoard();
 		boardMaker.fillBoard();
 		playerTurn.askForBoard();
-		playerTurn.askForTurn();
+		while (playerTurn.isWon)
+			{
+			playerTurn.askForTurn();
+
+			}
 		}
 	}
